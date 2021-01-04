@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7000:8080"
+    restart: unless-stopped
+    environment:
+      - MINIO_ENDPOINT=192.168.1.6:9000
+      - MINIO_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+      - MINIO_SECRET_ACCESS_KEY_ID=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      - MINIO_SECURE=false
